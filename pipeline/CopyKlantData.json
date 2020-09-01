@@ -1,0 +1,75 @@
+{
+	"name": "CopyKlantData",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_zaw",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "adfdemo/In/"
+					},
+					{
+						"name": "Destination",
+						"value": "adfdemo/Out/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*"
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "BlobRemco",
+							"type": "LinkedServiceReference"
+						},
+						"path": "adfdemo/Log"
+					},
+					"skipErrorFile": {
+						"fileMissing": true,
+						"dataInconsistency": true
+					},
+					"validateDataConsistency": true
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_zaw",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_zaw",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
