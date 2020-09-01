@@ -1,0 +1,70 @@
+{
+	"name": "CopyPipeline_5n8",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_5n8",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "adfdemo/In/"
+					},
+					{
+						"name": "Destination",
+						"value": "adfdemo/Out/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*"
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"skipErrorFile": {
+						"fileMissing": true,
+						"dataInconsistency": true
+					},
+					"validateDataConsistency": true
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_5n8",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_5n8",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-08-27T10:50:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

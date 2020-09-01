@@ -1,0 +1,24 @@
+{
+	"name": "DestinationDataset_a07",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobRemco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "Out",
+				"container": "adfdemo"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

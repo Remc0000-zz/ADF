@@ -1,0 +1,81 @@
+{
+	"name": "CopyTaxi",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_l35",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "rvdsynapseadlsfilesystem/taxi_log_2008_by_id/"
+					},
+					{
+						"name": "Destination",
+						"value": "rvdsynapseadlsfilesystem/TaxiData/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"deleteFilesAfterCompletion": false
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"logStorageSettings": {
+						"linkedServiceName": {
+							"referenceName": "rvdsynapseadls",
+							"type": "LinkedServiceReference"
+						},
+						"path": "rvdsynapseadlsfilesystem/Logging"
+					},
+					"skipErrorFile": {
+						"fileMissing": true
+					},
+					"validateDataConsistency": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_l35",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_l35",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "applicatie B/subfolder B"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-08-17T15:13:32Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

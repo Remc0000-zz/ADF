@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_l35",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rvdsynapseadls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "taxi_log_2008_by_id",
+				"fileSystem": "rvdsynapseadlsfilesystem"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

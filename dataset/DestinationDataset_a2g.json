@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_a2g",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobRemco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "testkpn",
+				"container": "remco"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

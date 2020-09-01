@@ -1,0 +1,125 @@
+{
+	"name": "SourceDataset_a07",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobRemco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "In",
+				"container": "adfdemo"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Age",
+				"type": "String"
+			},
+			{
+				"name": "AnnualIncome",
+				"type": "String"
+			},
+			{
+				"name": "CallDropRate",
+				"type": "String"
+			},
+			{
+				"name": "CallFailureRate",
+				"type": "String"
+			},
+			{
+				"name": "CallingNumber",
+				"type": "String"
+			},
+			{
+				"name": "CustomerID",
+				"type": "String"
+			},
+			{
+				"name": "CustomerSuspended",
+				"type": "String"
+			},
+			{
+				"name": "Education",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "HomeOwner",
+				"type": "String"
+			},
+			{
+				"name": "MaritalStatus",
+				"type": "String"
+			},
+			{
+				"name": "MonthlyBilledAmount",
+				"type": "String"
+			},
+			{
+				"name": "NoAdditionalLines",
+				"type": "String"
+			},
+			{
+				"name": "NumberOfComplaints",
+				"type": "String"
+			},
+			{
+				"name": "NumberOfMonthUnpaid",
+				"type": "String"
+			},
+			{
+				"name": "NumDaysContractEquipmentPlanExpiring",
+				"type": "String"
+			},
+			{
+				"name": "Occupation",
+				"type": "String"
+			},
+			{
+				"name": "PenaltyToSwitch",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "TotalMinsUsedInLastMonth",
+				"type": "String"
+			},
+			{
+				"name": "UnpaidBalance",
+				"type": "String"
+			},
+			{
+				"name": "UsesInternetService",
+				"type": "String"
+			},
+			{
+				"name": "UsesVoiceService",
+				"type": "String"
+			},
+			{
+				"name": "PercentageCallOutsideNetwork",
+				"type": "String"
+			},
+			{
+				"name": "Churn",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
