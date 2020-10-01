@@ -1,0 +1,18 @@
+{
+	"name": "DestinationDataset_uf7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobRemco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "In",
+				"container": "adfdemo"
+			}
+		}
+	}
+}
