@@ -1,0 +1,23 @@
+{
+	"name": "SourceDataset_uf7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLStest",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "10088.txt",
+				"folderPath": "TaxiData",
+				"fileSystem": "rvdsynapseadlsfilesystem"
+			},
+			"compression": {
+				"type": "BZip2",
+				"level": "Fastest"
+			}
+		}
+	}
+}
