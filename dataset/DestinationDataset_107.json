@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_107",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLStest",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			}
+		}
+	}
+}
