@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_9kt",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobRemco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "remco"
+			}
+		}
+	}
+}
