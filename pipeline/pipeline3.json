@@ -102,7 +102,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
-											"value": "@variables('tablename')",
+											"value": "@concat('resultaat_',pipeline().RunId)",
 											"type": "Expression"
 										}
 									}
