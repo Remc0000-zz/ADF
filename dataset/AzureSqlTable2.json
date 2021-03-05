@@ -10,7 +10,10 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "SalesLT",
-			"table": "resultaat"
+			"table": {
+				"value": "@concat('resultaat',utcnow())",
+				"type": "Expression"
+			}
 		}
 	}
 }
