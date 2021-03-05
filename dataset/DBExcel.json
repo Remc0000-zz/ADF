@@ -1,0 +1,34 @@
+{
+	"name": "DBExcel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobRemco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "databases.xlsx",
+				"container": "remco"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "server",
+				"type": "String"
+			},
+			{
+				"name": "pool",
+				"type": "String"
+			},
+			{
+				"name": "db",
+				"type": "String"
+			}
+		]
+	}
+}
