@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobRemco'"
 		},
+		"EPDB2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'EPDB2'"
+		},
 		"FtpServerMirek_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'FtpServerMirek'"
@@ -34,6 +38,18 @@
 		"Oracle1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Oracle1'"
+		},
+		"SQLParamLS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQLParamLS'"
+		},
+		"elasticpool_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'elasticpool'"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
 		},
 		"rvdsynapseadls_accountKey": {
 			"type": "secureString",
@@ -97,11 +113,23 @@
 					"BlobRemco_connectionString": {
 						"value": "[parameters('BlobRemco_connectionString')]"
 					},
+					"EPDB2_connectionString": {
+						"value": "[parameters('EPDB2_connectionString')]"
+					},
 					"FtpServerMirek_password": {
 						"value": "[parameters('FtpServerMirek_password')]"
 					},
 					"Oracle1_connectionString": {
 						"value": "[parameters('Oracle1_connectionString')]"
+					},
+					"SQLParamLS_connectionString": {
+						"value": "[parameters('SQLParamLS_connectionString')]"
+					},
+					"elasticpool_connectionString": {
+						"value": "[parameters('elasticpool_connectionString')]"
+					},
+					"linkedService1_connectionString": {
+						"value": "[parameters('linkedService1_connectionString')]"
 					},
 					"rvdsynapseadls_accountKey": {
 						"value": "[parameters('rvdsynapseadls_accountKey')]"
@@ -140,6 +168,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'RvDADF_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "RvDADF_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'RvDADF_ArmTemplate_1')]"
 			]
 		}
 	]
