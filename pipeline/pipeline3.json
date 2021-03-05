@@ -44,7 +44,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1').output.value",
+						"value": "@activity('Lookup1').output",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -69,15 +69,8 @@
 									"partitionOption": "None"
 								},
 								"sink": {
-									"type": "DelimitedTextSink",
-									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
-									},
-									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".txt"
-									}
+									"type": "AzureSqlSink",
+									"tableOption": "autoCreate"
 								},
 								"enableStaging": false,
 								"translator": {
@@ -91,13 +84,13 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SQLParam",
+									"referenceName": "AzureSqlTable1",
 									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "resultquery",
+									"referenceName": "AzureSqlTable2",
 									"type": "DatasetReference"
 								}
 							]

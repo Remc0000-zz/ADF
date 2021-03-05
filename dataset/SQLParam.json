@@ -5,6 +5,14 @@
 			"referenceName": "SQLParamLS",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"server": {
+				"type": "string"
+			},
+			"db": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": []
