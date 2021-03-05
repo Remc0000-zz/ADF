@@ -1,0 +1,12 @@
+{
+	"name": "SQLParam",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLParamLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
