@@ -96,11 +96,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"server": {
-											"value": "@activity('Lookup1').output.server",
+											"value": "@item().server",
 											"type": "Expression"
 										},
 										"db": {
-											"value": "@activity('Lookup1').output.db",
+											"value": "@item().db",
 											"type": "Expression"
 										}
 									}
