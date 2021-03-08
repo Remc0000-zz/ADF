@@ -1100,12 +1100,15 @@
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "AzureSqlSource",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
 							},
 							"dataset": {
-								"referenceName": "AzureSqlTable3",
+								"referenceName": "DBExcel",
 								"type": "DatasetReference",
 								"parameters": {}
 							},
@@ -1167,9 +1170,18 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "AzureSqlTable1",
+											"referenceName": "SQLParam",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"server": {
+													"value": "@item().server",
+													"type": "Expression"
+												},
+												"db": {
+													"value": "@item().db",
+													"type": "Expression"
+												}
+											}
 										}
 									],
 									"outputs": [
@@ -1211,8 +1223,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable3')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
+				"[concat(variables('factoryId'), '/datasets/DBExcel')]",
+				"[concat(variables('factoryId'), '/datasets/SQLParam')]",
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]"
 			]
 		},
@@ -1472,7 +1484,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "elasticpool",
+					"referenceName": "SQLParamLS",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -1484,7 +1496,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/elasticpool')]"
+				"[concat(variables('factoryId'), '/linkedServices/SQLParamLS')]"
 			]
 		},
 		{
@@ -2038,7 +2050,17 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "SQLParamLS",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"server": {
+							"value": "@dataset().server",
+							"type": "Expression"
+						},
+						"db": {
+							"value": "@dataset().db",
+							"type": "Expression"
+						}
+					}
 				},
 				"parameters": {
 					"server": {

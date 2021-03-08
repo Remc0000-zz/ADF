@@ -1152,12 +1152,15 @@
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "AzureSqlSource",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
 							},
 							"dataset": {
-								"referenceName": "AzureSqlTable3",
+								"referenceName": "DBExcel",
 								"type": "DatasetReference",
 								"parameters": {}
 							},
@@ -1219,9 +1222,18 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "AzureSqlTable1",
+											"referenceName": "SQLParam",
 											"type": "DatasetReference",
-											"parameters": {}
+											"parameters": {
+												"server": {
+													"value": "@item().server",
+													"type": "Expression"
+												},
+												"db": {
+													"value": "@item().db",
+													"type": "Expression"
+												}
+											}
 										}
 									],
 									"outputs": [
