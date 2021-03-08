@@ -1,5 +1,5 @@
 {
-	"name": "pipeline3",
+	"name": "QueryOverAllDatabases",
 	"properties": {
 		"activities": [
 			{
@@ -92,18 +92,8 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SQLParam",
-									"type": "DatasetReference",
-									"parameters": {
-										"server": {
-											"value": "@item().server",
-											"type": "Expression"
-										},
-										"db": {
-											"value": "@item().db",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "AzureSqlTable1",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
