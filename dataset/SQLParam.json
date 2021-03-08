@@ -3,7 +3,17 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SQLParamLS",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"server": {
+					"value": "@dataset().server",
+					"type": "Expression"
+				},
+				"db": {
+					"value": "@dataset().db",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"server": {
