@@ -7,7 +7,7 @@
 			"url": "https://management.azure.com/providers/Microsoft.ResourceGraph/resources?api-version=2019-04-01",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "ManagedServiceIdentity",
-			"aadResourceId": "management.core.windows/net"
+			"aadResourceId": "https://management.core.windows.net"
 		}
 	}
 }
