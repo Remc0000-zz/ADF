@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://management.azure.com/subscriptions/2de5e948-c957-42f1-9c13-477b2e5fc44a /providers/Microsoft.Sql/servers?api-version=2019-06-01-preview",
+			"url": "https://management.azure.com/subscriptions/2de5e948-c957-42f1-9c13-477b2e5fc44a/providers/Microsoft.Sql/servers?api-version=2019-06-01-preview",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "ManagedServiceIdentity",
 			"aadResourceId": "https://management.core.windows.net"
