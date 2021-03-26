@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_4v0",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLStest",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "ecdc_cases.parquet",
+				"folderPath": "covid_cases",
+				"fileSystem": "container"
+			}
+		}
+	}
+}
