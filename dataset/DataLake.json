@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(dataset().table_name,' ', utcnow())",
+					"value": "@concat(dataset().table_name,' ', utcnow(),'.csv')",
 					"type": "Expression"
 				},
 				"folderPath": {
