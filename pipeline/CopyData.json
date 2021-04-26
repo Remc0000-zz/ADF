@@ -21,10 +21,11 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "AzureSqlDatabaseExternal_ControlTable",
+						"referenceName": "AzureSqlDatabaseDataSource",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "controltable"
+							"schema_name": "dbo",
+							"table_name": "controltable"
 						}
 					},
 					"firstRowOnly": false
