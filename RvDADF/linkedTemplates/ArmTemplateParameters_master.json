@@ -53,6 +53,18 @@
 		"FtpServerMirek_properties_typeProperties_userName": {
 			"value": "dgkdhjf"
 		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://management.azure.com/subscriptions/2de5e948-c957-42f1-9c13-477b2e5fc44a/providers/Microsoft.Sql/servers?api-version=2019-06-01-preview"
+		},
+		"RestService1_properties_typeProperties_aadResourceId": {
+			"value": "https://management.core.windows.net"
+		},
+		"RestService2_properties_typeProperties_url": {
+			"value": "https://management.azure.com/providers/Microsoft.ResourceGraph/resources?api-version=2019-04-01"
+		},
+		"RestService2_properties_typeProperties_aadResourceId": {
+			"value": "https://management.core.windows.net"
+		},
 		"rvdsynapseadls_properties_typeProperties_url": {
 			"value": "https://rvdsynapsealds.dfs.core.windows.net"
 		},
