@@ -24,8 +24,8 @@
 						"referenceName": "AzureSqlDatabaseDataSource",
 						"type": "DatasetReference",
 						"parameters": {
-							"schema_name": "[dbo]",
-							"table_name": "[controltable]"
+							"schema_name": "dbo",
+							"table_name": "controltable"
 						}
 					},
 					"firstRowOnly": false
