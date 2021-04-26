@@ -97,7 +97,11 @@
 							"inputs": [
 								{
 									"referenceName": "AzureSqlDatabaseDataSource",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"schema_name": "@schema",
+										"table_name": "@table"
+									}
 								}
 							],
 							"outputs": [
