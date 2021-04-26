@@ -3117,10 +3117,11 @@
 								"partitionOption": "None"
 							},
 							"dataset": {
-								"referenceName": "AzureSqlDatabaseExternal_ControlTable",
+								"referenceName": "AzureSqlDatabaseDataSource",
 								"type": "DatasetReference",
 								"parameters": {
-									"TableName": "controltable"
+									"schema_name": "dbo",
+									"table_name": "controltable"
 								}
 							},
 							"firstRowOnly": false
@@ -3223,7 +3224,6 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/AzureSqlDatabaseExternal_ControlTable')]",
 				"[concat(variables('factoryId'), '/datasets/AzureSqlDatabaseDataSource')]",
 				"[concat(variables('factoryId'), '/datasets/DataLake')]"
 			]
@@ -3251,11 +3251,11 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@dataset().table_name",
+							"value": "@concat(dataset().table_name,' ', utcnow())",
 							"type": "Expression"
 						},
 						"folderPath": {
-							"value": "@dataset().schema_name",
+							"value": "@concat(dataset().schema_name,'/',dataset().table_name)",
 							"type": "Expression"
 						},
 						"fileSystem": "container"
