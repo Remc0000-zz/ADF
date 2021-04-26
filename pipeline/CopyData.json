@@ -68,14 +68,12 @@
 									"partitionOption": "None"
 								},
 								"sink": {
-									"type": "DelimitedTextSink",
+									"type": "ParquetSink",
 									"storeSettings": {
 										"type": "AzureBlobFSWriteSettings"
 									},
 									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".txt"
+										"type": "ParquetWriteSettings"
 									}
 								},
 								"enableStaging": false,
@@ -106,18 +104,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DataLake",
-									"type": "DatasetReference",
-									"parameters": {
-										"schema_name": {
-											"value": "@item().schema_name",
-											"type": "Expression"
-										},
-										"table_name": {
-											"value": "@item().table_name",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "DataLakeParquet",
+									"type": "DatasetReference"
 								}
 							]
 						}

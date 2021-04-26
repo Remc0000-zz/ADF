@@ -1,0 +1,35 @@
+{
+	"name": "DataLakeParquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "rvdsynapseadls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema_name": {
+				"type": "String"
+			},
+			"table_name": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(dataset().table_name,'.parquet')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('WWIMPParquet/', dataset().schema_name,'/',dataset().table_name)",
+					"type": "Expression"
+				},
+				"fileSystem": "container"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
