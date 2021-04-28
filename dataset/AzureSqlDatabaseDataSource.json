@@ -4,7 +4,10 @@
 		"description": "Connection to your data source store.",
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase2",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"servername": "rvdsqlserverep.database.windows.net"
+			}
 		},
 		"parameters": {
 			"schema_name": {

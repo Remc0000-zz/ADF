@@ -23,7 +23,7 @@
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat('WWIMPParquet/', dataset().schema_name,'/',dataset().table_name)",
+					"value": "@concat('JustBI/', dataset().schema_name,'/',dataset().table_name)",
 					"type": "Expression"
 				},
 				"fileSystem": "container"
